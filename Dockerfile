@@ -1,19 +1,36 @@
-FROM node:12.16.3-alpine3.9
+# Pull the base image 
+FROM node:18.3.0-alpine3.14 as build-stage
 
-RUN mkdir -p /var/www/dockerize-nuxt/nuxt-app
-WORKDIR /var/www/dockerize-nuxt/nuxt-app
+# set working directory
+WORKDIR /app
 
+# Copy package.json and package-lock.json
 COPY package*.json ./
-RUN npm install
 
+# Install dependencies
+RUN corepack enable pnpm
+RUN pnpm install
+
+# Copy all files
 COPY . .
 
-RUN npm run build
+# Build app
+RUN pnpm build && pnpm generate
 
-EXPOSE 3000
+# nginx state for serving content
+FROM nginx:1.21.1-alpine as production-stage
 
-ENV NUXT_HOST=0.0.0.0
+# remove the default nginx.conf
+RUN rm -rf /usr/share/nginx/html/*
 
-ENV NUXT_PORT=3000
+# Copy nginx configuration
+COPY ./nginx/default.conf /etc/nginx/conf.d
 
-CMD [ "npm", "start" ]
+# Copy static files from build-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# start nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
