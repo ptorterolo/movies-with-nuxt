@@ -3,7 +3,7 @@
     <div class="w-full md:w-3/4 mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div class="md:max-w-sm">
-          <figure><img :src="movie.Poster" :alt="movie.Title" class="w-full" /></figure>
+          <figure><img :src="movie.Poster" :alt="movie.Title" class="w-full" ></figure>
           <NuxtLink to="/movies" class="flex items-center btn btn-primary btn-sm mt-4 text-white"
             >Volver</NuxtLink
           >
@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import type { Movie } from '@/types/'
-const props = defineProps<{ movie: Movie }>()
+defineProps<{ movie: Movie }>()
 </script>
 
 <style scoped></style>

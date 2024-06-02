@@ -10,9 +10,8 @@ export const useFirebaseAuth = () => {
       const user = userCredential.user
       userStore.setUser(user)
       return user
-    } catch (error: any) {
-      const errorCode = error.code
-      const errorMessage = error.message
+    } catch (error) {
+      const errorMessage = (error as Error).message
       throw new Error(errorMessage)
     }
   }

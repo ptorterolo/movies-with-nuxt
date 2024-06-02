@@ -4,11 +4,11 @@
   >
     <h1 class="font-mouse text-center text-6xl md:text-8xl text-white my-4">Movie Finder</h1>
     <form
-      @submit.prevent="handleSubmit"
       class="relative space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
+      @submit.prevent="handleSubmit"
     >
       <h1 class="text-4xl font-semibold text-white">Sign In</h1>
-      <div role="alert" class="alert alert-warning" v-if="errorMsge">
+      <div v-if="errorMsge" role="alert" class="alert alert-warning">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="stroke-current shrink-0 h-6 w-6"
@@ -33,24 +33,24 @@
           <span class="sr-only">Email</span>
           <input
             id="email"
+            v-model.trim="credentials.email"
             type="email"
             placeholder="Email"
             class="input w-full"
-            v-model.trim="credentials.email"
             required
-          />
+          >
         </label>
         <label class="inline-block w-full" for="password">
           <span class="sr-only">Password</span>
           <input
             id="password"
+            v-model.trim="credentials.password"
             type="password"
             placeholder="Password"
             minlength="6"
             class="input w-full"
-            v-model.trim="credentials.password"
             required
-          />
+          >
         </label>
       </div>
 
@@ -77,8 +77,8 @@ async function handleSubmit() {
   try {
     await login(credentials.value.email, credentials.value.password)
     navigateTo('/movies')
-  } catch (error: any) {
-    errorMsge.value = error.message
+  } catch (error) {
+    errorMsge.value = (error as Error).message
   }
 }
 </script>

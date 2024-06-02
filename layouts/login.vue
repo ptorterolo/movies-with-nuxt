@@ -1,6 +1,6 @@
 <template>
   <div class="background-image">
-    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="absolute inset-0 bg-black opacity-50" />
     <slot />
   </div>
 </template>
