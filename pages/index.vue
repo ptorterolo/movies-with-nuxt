@@ -8,7 +8,7 @@
       @submit.prevent="handleSubmit"
     >
       <h1 class="text-4xl font-semibold text-white">Sign In</h1>
-      <div v-if="errorMsge" role="alert" class="alert alert-warning">
+      <div v-if="errorMsge" role="alert" class="alert alert-warning" data-testid="errorBox">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="stroke-current shrink-0 h-6 w-6"
