@@ -28,9 +28,9 @@
           tabindex="0"
           class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
         >
-          <li><NuxtLink to="/user/profile" data-testid="userProfileBtn">Profile</NuxtLink></li>
+          <li><NuxtLink to="/user/profile" data-testid="userProfileBtn">Cuenta</NuxtLink></li>
           <li>
-            <button type="button" data-testid="logoutBtn" @click="setLogout">Logout</button>
+            <button type="button" data-testid="logoutBtn" @click="setLogout">Cerrar Sesión</button>
           </li>
         </ul>
       </div>

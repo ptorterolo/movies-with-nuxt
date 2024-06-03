@@ -79,7 +79,7 @@ async function getData() {
   if (isLoading.value) return
   isLoading.value = true
   try {
-    const response: MovieSearch = await $fetch(`http://www.omdbapi.com/?apikey=${omdbApiKey}`, {
+    const response: MovieSearch = await $fetch(`https://www.omdbapi.com/?apikey=${omdbApiKey}`, {
       params: {
         s: movieStore.queryString,
         page: movieStore.page

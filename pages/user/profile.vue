@@ -1,19 +1,27 @@
 <template>
-  <div class="container mx-auto">
-    <div class="card bg-base-100 md:w-1/2 md:mx-auto mt-10">
+  <div class="container mx-auto p-4">
+    <div class="card bg-base-100 md:w-1/2 lg:w-1/4 md:mx-auto mt-10">
       <div class="card-body">
         <h1 class="text-2xl font-bold mb-4">Cuenta</h1>
-        <div class="grid grid-cols-2">
-          <div class="mb-4">Email:</div>
-          <div class="font-bold">{{ store.user.email }}</div>
-          <div class="mb-4">Email Verified:</div>
-          <div class="font-bold">{{ store.user.emailVerified }}</div>
-          <div class="mb-4">Phone Number:</div>
-          <div class="font-bold">{{ store.user.phoneNumber || '-' }}</div>
-          <div class="mb-4">Created At:</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div>Email:</div>
+          <div class="font-bold">{{ store.user?.email }}</div>
+          <div>Email Verified:</div>
+          <div class="font-bold">{{ store.user?.emailVerified }}</div>
+          <div>Phone Number:</div>
+          <div class="font-bold">{{ store.user?.phoneNumber || '-' }}</div>
+          <div>Created At:</div>
           <div class="font-bold">{{ store.createdAt }}</div>
-          <div class="mb-4">Last Login At:</div>
+          <div>Last Login At:</div>
           <div class="font-bold">{{ store.lastSignInTime }}</div>
+        </div>
+        <div class="card-actions justify-center">
+          <NuxtLink
+            data-testid="backToMainPage"
+            to="/movies"
+            class="bg-primary btn btn-sm text-white mt-4"
+            >Volver</NuxtLink
+          >
         </div>
       </div>
     </div>

@@ -4,7 +4,9 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div class="md:max-w-sm">
           <figure><img :src="movie.Poster" :alt="movie.Title" class="w-full" ></figure>
-          <NuxtLink to="/movies" class="flex items-center btn btn-primary btn-sm mt-4 text-white"
+          <NuxtLink
+            to="/movies"
+            class="hidden lg:flex items-center btn btn-primary btn-sm mt-4 text-white"
             >Volver</NuxtLink
           >
         </div>
@@ -35,6 +37,11 @@
               </li>
             </ul>
           </div>
+          <NuxtLink
+            to="/movies"
+            class="lg:hidden flex items-center btn btn-primary btn-sm mt-4 text-white"
+            >Volver</NuxtLink
+          >
         </div>
       </div>
     </div>

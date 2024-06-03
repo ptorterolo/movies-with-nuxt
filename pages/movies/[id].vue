@@ -8,7 +8,7 @@
 const { omdbApiKey } = useRuntimeConfig().public
 const route = useRoute()
 
-const { data } = await useFetch(`http://www.omdbapi.com/?apikey=${omdbApiKey}`, {
+const { data } = await useFetch(`https://www.omdbapi.com/?apikey=${omdbApiKey}`, {
   query: { i: route.params.id, plot: 'full' }
 })
 </script>

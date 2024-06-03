@@ -19,7 +19,7 @@ export const useMovieStore = defineStore('movies', () => {
       return !movies.value.some((movie) => movie.imdbID === newMovie.imdbID)
     })
 
-    movies.value = [...movies.value, ...uniqueMovies]
+    movies.value = [...uniqueMovies, ...movies.value]
   }
 
   function incrementPage() {
