@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      titleTemplate: 'Movie Finder'
+    }
+  },
   devtools: { enabled: true },
   pages: true,
   css: ['~/assets/css/main.css'],
