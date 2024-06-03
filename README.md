@@ -3,11 +3,14 @@
 > Movie Finder app demo built using [Nuxt 3](https://github.com/nuxt/nuxt), [Firebase](https://firebase.google.com/),[Tailwind](https://tailwindcss.com/docs/installation), [daiyUI](https://daisyui.com/), [Nuxt Google Fonts](https://nuxt.com/modules/google-fonts), [Eslint for Nuxt](https://nuxt.com/modules/eslint), [The Open Movie Database API](https://www.omdbapi.com/) and [TypeScript](https://github.com/microsoft/TypeScript).
 
 **🍿 Live preview:** https://movie-finder-nuxt.netlify.app/
-![Login screenshot](public/screenshots/login.png)
-![Search screenshot](public/screenshots/search.png)
-![Detail screenshot](public/screenshots/detail.png)
 
 ## Screenshots
+![Login screenshot](public/screenshots/login.png)
+
+![Search screenshot](public/screenshots/search.png)
+
+![Detail screenshot](public/screenshots/detail.png)
+
 
 ### Credentials for live demo 
 ```
