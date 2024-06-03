@@ -1,7 +1,9 @@
 <template>
   <div class="navbar bg-slate-950">
     <div class="flex-1">
-      <NuxtLink to="/movies" class="text-4xl text-white font-mouse">Movie Finder</NuxtLink>
+      <NuxtLink data-testid="backToMainPage" to="/movies" class="text-4xl text-white font-mouse"
+        >Movie Finder</NuxtLink
+      >
     </div>
     <div class="flex-none gap-2">
       <div class="dropdown dropdown-end">
@@ -13,10 +15,7 @@
         >
           <template v-if="store.user?.photoURL">
             <div class="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              >
+              <img alt="Imagen de usuario" :src="store.user?.photoURL" >
             </div>
           </template>
           <template v-else>
@@ -29,9 +28,9 @@
           tabindex="0"
           class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
         >
-          <li><NuxtLink to="/user/profile">Profile</NuxtLink></li>
+          <li><NuxtLink to="/user/profile" data-testid="userProfileBtn">Profile</NuxtLink></li>
           <li>
-            <button type="button" @click="setLogout">Logout</button>
+            <button type="button" data-testid="logoutBtn" @click="setLogout">Logout</button>
           </li>
         </ul>
       </div>

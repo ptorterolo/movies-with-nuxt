@@ -6,6 +6,7 @@
         <input
           id="search"
           v-model.trim="searchString"
+          data-testid="searchInput"
           aria-label="Buscar películas"
           class="bg-transparent text-white text-lg md:text-4xl w-full active:outline-none focus:outline-none"
           placeholder="Título de pelicula (al menos 3 caracteres)"
@@ -15,6 +16,7 @@
           type="button"
           class="absolute right-0"
           aria-label="Limpiar búsqueda"
+          data-testid="clear-search"
           @click="searchString = ''"
         >
           <Icon name="material-symbols-light:close" class="w-10 h-10 text-white" />
