@@ -81,6 +81,15 @@ yarn build
 bun run build
 ```
 
+## Utils
+```
+# Lint 
+pnpm Lint 
+
+# Unit Testing 
+pnpm test
+```
+
 Locally preview production build:
 
 ```bash
