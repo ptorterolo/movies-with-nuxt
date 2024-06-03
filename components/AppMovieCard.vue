@@ -2,13 +2,14 @@
   <NuxtLink
     aria-label="View details for {{ movie.Title }}"
     :to="{ name: 'movies-id', params: { id: movie.imdbID } }"
-    class="flex-1"
   >
-    <div class="block bg-gray-600 aspect-[10/16] p-1 transition duration-300 hover:scale-105 z-10">
-      <img :src="setPoster()" :alt="`${movie.Title} Poster`" class="w-full h-full object-cover" >
-      <div>
-        <h2 class="text-white mt-2">{{ movie.Title }}</h2>
-        <p class="text-white mt-2">{{ movie.Year }}</p>
+    <div class="h-full">
+      <div class="aspect-[10/16] bg-gray-600 p-1 transition duration-300 hover:scale-105 z-10">
+        <img :src="setPoster()" :alt="`${movie.Title} Poster`" class="w-full h-full object-cover" >
+      </div>
+      <div class="text-white">
+        <h2 class="mt-2">{{ movie.Title }}</h2>
+        <p>{{ movie.Year }}</p>
       </div>
     </div>
   </NuxtLink>
